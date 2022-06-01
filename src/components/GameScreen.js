@@ -37,9 +37,9 @@ function QuizScreen() {
 
         function randomizeAnswerOrder(a, b) {
             const newArray = []
-            newArray.push({ answer: a, isCorrectAnswer: true, isSelected: false, isWrong: false, isCorrect: false })
+            newArray.push({ answer: a, isCorrectAnswer: true, isSelected: false, isWrong: false, isCorrect: false, isActive: false })
             for (let i = 0; i < b.length; i++) {
-                newArray.push({ answer: b[i], isCorrectAnswer: false, isSelected: false, isWrong: false, isCorrect: false })
+                newArray.push({ answer: b[i], isCorrectAnswer: false, isSelected: false, isWrong: false, isCorrect: false, isActive: false })
             }
             const shuffledArray = shuffle(newArray)
             return shuffledArray
@@ -100,7 +100,8 @@ function QuizScreen() {
                 return ({
                     ...mapAnswer,
                     isCorrect: mapAnswer.isCorrectAnswer ? true : false,
-                    isWrong: !mapAnswer.isCorrectAnswer && mapAnswer.isSelected ? true: false
+                    isWrong: !mapAnswer.isCorrectAnswer && mapAnswer.isSelected ? true: false,
+                    isActive: !mapAnswer.isCorrectAnswer && !mapAnswer.isSelected ? true : false
                 })
             })
 
@@ -144,11 +145,4 @@ function QuizScreen() {
 
 export default QuizScreen;
 
-//
-// Things that are missing:
-// -> Check answers
-//      -> Track amount of correct Answers
-            // -> Display amount of correct answers
-        // -> Show different Colors depending on right/wrong answer
-// -> Start a new Game
-// -> Start with Splashscreen
+

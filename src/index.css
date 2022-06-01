@@ -34,12 +34,19 @@ body {
 
 .answerButton.correct {
   background: #94D7A2;
-  border: none
+  border: none;
+  cursor: default;
 }
 
 .answerButton.wrong {
   background: #F8BCBC;
-  border: none
+  border: none;
+  cursor: default;
+}
+
+.answerButton.notActive {
+  opacity: 0.5;
+  cursor: default;
 }
 
 hr {
@@ -54,6 +61,7 @@ hr {
   height: 50px;
   background: #4D5B9E;
   border-radius: 0.625rem;
+  cursor: pointer;
 }
 
 .checkAnswersButton--div {

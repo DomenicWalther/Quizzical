@@ -5,7 +5,7 @@ function Answer(props) {
 
     const answerElements = props.answers.map(item => (
         <div
-            className={`answerButton ${item.isWrong ? 'wrong' : item.isCorrect ? 'correct' : item.isSelected ? 'selected' : ''}`}
+            className={`answerButton ${item.isWrong ? 'wrong' : item.isCorrect ? 'correct' : item.isActive ? 'notActive' : item.isSelected ? 'selected' : ''}`}
             onClick={() => props.handleClick(props.id, item.answer)}
             key={item.answer}
         >
