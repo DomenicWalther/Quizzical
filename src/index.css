@@ -1,13 +1,91 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F7FB;
+  font-family: Karla;
+  padding: 30px;
+  padding: 3rem;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Quiz--container {
+  color: #293264;
+  padding-top: 10px;
+}
+
+.answer--container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  padding-bottom: 30px;
+}
+
+.answerButton {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 0.794239px solid #4D5B9E;
+  border-radius: 7.94239px;
+  cursor: pointer;
+}
+
+.answerButton.selected {
+  background: #D6DBF5;
+  border: none
+}
+
+.answerButton.correct {
+  background: #94D7A2;
+  border: none
+}
+
+.answerButton.wrong {
+  background: #F8BCBC;
+  border: none
+}
+
+hr {
+  color: #DBDEF0;
+}
+
+.checkAnswersButton {
+  color: white;
+  font-family: Karla;
+  border: none;
+  width: 200px;
+  height: 50px;
+  background: #4D5B9E;
+  border-radius: 0.625rem;
+}
+
+.checkAnswersButton--div {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.scoreAmount {
+  color: #293264;
+  margin-right: 30px;
+}
+
+.startScreen {
+  background-color: #F5F7FB;
+  color: #293264;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.startScreen .startQuizButton {
+  border: none;
+  padding: 20px;
+  border-radius: 0.5rem;
+  background-color: #293264;
+  color: white;
+  font-family: Karla;
+  font-size: 1.2rem; 
 }
