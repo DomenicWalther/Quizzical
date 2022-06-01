@@ -2,7 +2,10 @@ import React from "react"
 
 function Answer(props) {
 
-
+    /**
+     * Maps over all the given answers and creates Styles Div Elements for them.
+     * Every Answer has 4 different booleans which explain their current status ('isWrong', 'isCorrect', 'isActive', 'isSelected')
+     */
     const answerElements = props.answers.map(item => (
         <div
             className={`answerButton ${item.isWrong ? 'wrong' : item.isCorrect ? 'correct' : item.isActive ? 'notActive' : item.isSelected ? 'selected' : ''}`}
