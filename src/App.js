@@ -10,6 +10,9 @@ export default function App() {
    */
   const [showStartScreen, setStartScreen] = React.useState(true)
 
+  const amountofQuestions = 5;
+  const difficulty = "easy";
+
   function handleStartScreen() {
     setStartScreen(false)
   }
@@ -18,7 +21,7 @@ export default function App() {
 
   return (
     <main>
-      {showStartScreen ? <StartScreen handleClick={handleStartScreen}/> : <QuizScreen /> }
+      {showStartScreen ? <StartScreen handleClick={handleStartScreen}/> : <QuizScreen questionAmount={amountofQuestions} difficulty={difficulty}/> }
     </main>
   )
 }

@@ -2,7 +2,7 @@ import React from "react"
 import Answer from "./Answer";
 import { nanoid } from 'nanoid'
 
-function QuizScreen() {
+function QuizScreen(props) {
 
 
     const [questionArray, setQuestionArray] = React.useState([])
@@ -68,7 +68,7 @@ function QuizScreen() {
         }
 
 
-        fetch('https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple')
+        fetch(`https://opentdb.com/api.php?amount=${props.questionAmount}&difficulty=${props.difficulty}&type=multiple`)
             .then(response => response.json())
             .then(data => initializeQuestionArray(data.results))
     }, [newQuestions])
