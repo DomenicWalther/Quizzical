@@ -64,8 +64,7 @@ function QuizScreen() {
             for (let i = 0; i < b.length; i++) {
                 newArray.push({ answer: b[i], isCorrectAnswer: false, isSelected: false, isWrong: false, isCorrect: false, isActive: false })
             }
-            const shuffledArray = shuffle(newArray)
-            return shuffledArray
+            return shuffle(newArray)
         }
 
 
@@ -90,10 +89,12 @@ function QuizScreen() {
      * @param {string} answer String of the Answer that was clicked
      */
     function toggleSelected(id, answer) {
-        if(playingGame) {
+        if(!playingGame) return;
+
         const newQuestionArray = questionArray.map(item => {
+            let newItem
             if (item.id === id) {
-                var newItem = item.answers.map(mapAnswer => {
+                newItem = item.answers.map(mapAnswer => {
                     return ({
                         ...mapAnswer,
                         isSelected: mapAnswer.answer === answer ? !mapAnswer.isSelected : false
@@ -106,7 +107,6 @@ function QuizScreen() {
             })
         })
         setQuestionArray(newQuestionArray)
-    }
     }
 
 
