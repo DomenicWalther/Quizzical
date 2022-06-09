@@ -1,6 +1,7 @@
 import React from "react"
 import Answer from "./Answer";
 import { nanoid } from 'nanoid'
+import axios from "axios"
 
 function QuizScreen() {
 
@@ -26,6 +27,7 @@ function QuizScreen() {
          * @param {*} data The data to process. 
          */
         function initializeQuestionArray(data) {
+            console.log("🚀 ~ file: GameScreen.js ~ line 30 ~ initializeQuestionArray ~ data", data)
             const questionanswers = data.map(item => ({
                 question: item.question,
                 answers: randomizeAnswerOrder(item.correct_answer, item.incorrect_answers),
@@ -68,9 +70,8 @@ function QuizScreen() {
         }
 
 
-        fetch('https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple')
-            .then(response => response.json())
-            .then(data => initializeQuestionArray(data.results))
+        axios.get('https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple')
+            .then(resp => initializeQuestionArray(resp.data.results))
     }, [newQuestions])
 
 
