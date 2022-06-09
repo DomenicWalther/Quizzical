@@ -1,11 +1,8 @@
-
 ![Logo](https://i.imgur.com/qUzAPGe.png)
-
 
 # Quizzical
 
 A Quiz App created with React.
-
 
 ## Roadmap
 
@@ -19,7 +16,8 @@ A Quiz App created with React.
 
 - Dark Mode
 
+- Load another set of Questions in the Background to minimize time between different Quizzes.
+
 ## Authors
 
 - [@DomenicWalther](https://www.github.com/DomenicWalther)
-
